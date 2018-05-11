@@ -6,7 +6,11 @@ const mutations = {
 	},
   [types.CREATE_MEETUP](state, payload){
     state.loadedMeetups.push(payload)
+  },
+  [types.SET_PAGES](state){
+  	state.pages = state.pagination.rowsPerPage ? Math.ceil(state.meetups.length / state.pagination.rowsPerPage) : 0
   }
+        
 }
 
 

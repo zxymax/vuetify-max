@@ -78,5 +78,19 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
+  },
+  devServer: {
+    proxy: {
+      contentBase: path.join(__dirname, 'dist'),
+      stats: 'errors-only',
+      open: true,
+      port: 8080,
+      changeOrigin: true,
+      compress: true,
+      "/**": {
+        target: "http://localhost:8080",
+        secure: false
+      }
+    }
   }
 }

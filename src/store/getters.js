@@ -1,4 +1,5 @@
 export const count = state=> state.count
+export const pagination = state => state.pagination
 export const loadedMeetups = state =>{
   return state.loadedMeetups.sort((meetupA, meetupB)=>{
     return meetupA.date > meetupB.date

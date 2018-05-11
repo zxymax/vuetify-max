@@ -10,14 +10,15 @@ import moment from 'moment-timezone'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/javascript/javascript.js'
 import 'codemirror/theme/monokai.css'
-import 'vuetify/dist/vuetify.min.css' 
+import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { createSimpleTransition } from 'vuetify/es5/util/helpers'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import App from './App'
 import router from './router'
- 
+import axios from 'axios'
+Vue.prototype.$http = axios
 Vue.use(VueMoment, {
     moment
 })
@@ -44,7 +45,7 @@ Vue.use(VueCodemirror ,{
         readOnly: true,
         lineNumbers: true,
         line: true
-        
+
       }
 })
 

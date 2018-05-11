@@ -68,10 +68,13 @@
 
            {{count}} -
          </v-btn>
-         <v-btn  @click="changeCount(119)">
-
-           {{time}}
+         <v-btn large  @click="changeCount(119)">
+           <span>{{time}}</span>
          </v-btn>
+      <v-avatar @click="playMp3" class="rotate" style="cursor: pointer;" size="40"  color="indigo">
+        <v-icon  dark>music_note</v-icon>
+      </v-avatar>
+      <embed width="0"  height="0" src="http://p8k7ohp55.bkt.clouddn.com/Activ%20-%20Doar%20Cu%20Tine%20%28Win%20RMX%29.mp3"></embed>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
 
@@ -114,9 +117,7 @@
      computed: {
       ...mapGetters(['count'])
     },
-    methods: {
-      ...mapActions(['changeCount'])
-    },
+
     data: () => ({
       transitionName: 'slide-left',
       sideNav: true,
@@ -168,7 +169,13 @@
     methods: {
        locationVuetify() {
          location.href=" https://discordapp.com/"
-       }
+       },
+
+      ...mapActions(['changeCount']),
+      playMp3() {
+
+      }
+
     }
   }
 </script>
@@ -198,5 +205,23 @@
 
 .toolbar--clipped
    z-index 100
+.video-js .vjs-tech
+  z-index 1
+
+.rotate{
+  animation:change 2s linear infinite;
+}
+
+@-webkit-keyframes change{
+  0%{-webkit-transform:rotate(0deg);}
+
+　　50%{-webkit-transform:rotate(180deg);}
+
+　　100%{-webkit-transform:rotate(360deg);}
+}
+
+
+　
+
 
 </style>
